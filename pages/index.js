@@ -14,17 +14,12 @@ import {
 
 import {jsPDF} from "jspdf";
 
-var doc = new jsPDF();
+var pdf = new jsPDF('p', 'mm', 'f4');
+const mytext = "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ";
 
 
 const renderPdf = ()=>{
-	 return (
-    <Card css={{ mw: "400px" }}>
-      <Card.Body>
-        <Text>A basic card</Text>
-      </Card.Body>
-    </Card>
-  );
+	pdf.
 };
 
 export default function Home() {
@@ -32,7 +27,7 @@ export default function Home() {
 	<Container alignItems="center">
 	  <h1>LKU Form Otomatis</h1>
 	  <Text>masukan manual atau tata cara penggunaan web ini</Text>
-	  <br></br>
+	  <br></br><br></br>
 	  
 	  <Textarea
 	  labelPlaceholder="1.Pendahuluan"
@@ -42,7 +37,8 @@ export default function Home() {
 	  />
       <Button
 	  onPress={()=>{
-		  console.log("123");
+		  console.log("clicked");
+		  renderPdf();
 	  }}
 	  >Submit!</Button>
     </Container>
