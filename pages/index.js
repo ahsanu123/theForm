@@ -1,4 +1,4 @@
-import React from "react";
+import {useRef, useState} from "react";
 import {
   Container,
   Row,
@@ -10,19 +10,20 @@ import {
   Text,
   Link,
   Textarea 
-} from '@nextui-org/react';
+} from "@nextui-org/react";
 
 import {jsPDF} from "jspdf";
+import { Document, Packer, Paragraph, TextRun } from "docx";
 
+// variable 
 var pdf = new jsPDF('p', 'mm', 'f4');
 const mytext = "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ";
 
-
-const renderPdf = ()=>{
-	pdf.
-};
-
+//function
 export default function Home() {
+  const refPendahuluan = useRef();
+  const [pendahuluan, setPendahuluan] = useState("");
+  
   return (
 	<Container alignItems="center">
 	  <h1>LKU Form Otomatis</h1>
@@ -30,17 +31,23 @@ export default function Home() {
 	  <br></br><br></br>
 	  
 	  <Textarea
+	  ref={refPendahuluan}
 	  labelPlaceholder="1.Pendahuluan"
 	  fullWidth="true"
 	  minRow={3}
 	  maxRow={10}
 	  />
+	  
+	  <br></br>
       <Button
 	  onPress={()=>{
-		  console.log("clicked");
-		  renderPdf();
+		  setPendahuluan(refPendahuluan.current.value);
+		  console.log(pendahuluan);
 	  }}
 	  >Submit!</Button>
+	  
+	  <Text>{pendahuluan}</Text>
+	  
     </Container>
   );
 }
