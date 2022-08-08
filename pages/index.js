@@ -32,7 +32,8 @@ import { saveAs } from 'file-saver'
 
 //function
 const textHeader = new Paragraph({
-	text: "SMF - Senat Mahasiswa Fakultas",
+	text: "SMF - Senat Mahasiswa Fakultas\nSMK sekolah menengah kejuruan",
+	alignment: "right",
 });
 
 const doc = new Document({
@@ -156,3 +157,4 @@ export default function Home() {
     </Container>
   );
 }
+
