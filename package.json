@@ -18,10 +18,13 @@
     "parcel-bundler": "*"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "antd": "^4.22.4",
     "easy-template-x": "^3.0.0",
     "express": "*",
+    "file-saver": "^2.0.5",
     "react": "*",
     "react-dom": "*"
-  }
+  },
+  "type": "module"
 }
