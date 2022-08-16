@@ -8,7 +8,8 @@ the form adalah projek bla bla bla.....
 4. lalu cd ke folder tersebut `cd theform` 
 5. clone repo ini dengan `git clone https://github.com/ahsanu123/theForm.git`
 6. masuk ke folder repo dan jalankan `npm install`
-7. DONE
+7. lalu coba jalankan dengan `npm run dev`
+8. DONE
 
 ## LOG
 | DATE                 | Aaron                                 |   Ahsanu                             | Igo      |
