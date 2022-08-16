@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
 import { 
@@ -6,7 +6,8 @@ Breadcrumb,
 Layout, 
 Menu,
 Input,
-Form
+Form,
+Button
 } from 'antd';
 
 import {
@@ -41,27 +42,83 @@ const items = [
 const data = {
 	"judul": "LAPORAN PERTANGGUNGJAWABAN KEGIATANELEKTRO VIRTUAL (TROVI)",
 	"detailJudul": "BIDANG IV DEPARTEMEN KADERISASI DAN INFORKOM\nSENAT MAHASISWA FAKULTAS\nFAKULTAS TEKNIK ELEKTRONIKA DAN KOMPUTER\nUNIVERSITAS KRISTEN SATYA WACANA\nSALATIGA\n2022",
-	"isi": "lorem ipsum dolor sit amet abc de fg hij 12345 1234 4 4 4!!!! 2 !@($*&@^(@)@*",
+	"pendahuluan": "lorem ipsum dolor sit amet abc de fg hij 12345 1234 4 4 4!!!! 2 !@($*&@^(@)@*",
 	
 };
+
+
+
 
 const App = () =>{
   // variable
   const [collapsed, setCollapsed] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('1');
+  const [selectedOption, setSelectedOption] = useState('0');
+  const [judul, setJudul] = useState(null);
+  const [detailJudul, setDetailJudul] = useState(null);
+  const [pendahuluan, setPendahuluan] = useState(null);
+  
+  const refJudul = useRef(null);
+  const refDetailJudul = useRef(null);
+  const refPendahuluan = useRef(null);
   
   // function 
   const changeMenu = (menu) =>{
 	  setSelectedOption(menu.key);
-	  data["judul"]= "google"+menu.key;
-	  console.log(data["judul"]);
   }
+  const MenuContent = props =>{
+	  if(selectedOption === '0'){
+		  return (
+			<Form>
+			
+			  <h2> Judul</h2>
+			  <Form.Item >
+			    <TextArea 
+				rows={4} 
+				placeholder="Judul"
+				ref={refJudul}
+				value={judul}
+				onChange={(text)=>{
+					setJudul(text.target.value);
+					
+				}}
+				/>
+			  </Form.Item>
+			  
+			  <h2> Detail Judul</h2>
+			  <Form.Item >
+			    <TextArea 
+				rows={4} 
+				placeholder="Detail Judul"/>
+			  </Form.Item>
+			  
+			  <h2> Pendahuluan</h2>
+			  <Form.Item >
+			    <TextArea 
+				rows={4} 
+				placeholder="Pendahuluan"/>
+			  </Form.Item>
+			  
+			</Form>
+		  );
+	  }
+	  if(selectedOption === '1'){
+		  return (<Form> <h1>Laporan Magang</h1> </Form>);
+	  }
+	  if(selectedOption === '2'){
+		  return (<Form> <h1>Rekomendasi Magang</h1> </Form>);
+	  }
+  }
+  
+  const buttonSubmit = async() =>{
+	  var fromserver = await fetch('http://localhost:3000/api');
+  }
+  
   return (
-    <Layout>
+    <Layout style={{ minHeight: '100vh' }}>
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
         <Menu 
 		theme="dark" 
-		defaultSelectedKeys={['1']} 
+		defaultSelectedKeys={['0']} 
 		mode="inline" 
 		items={items} 
 		onClick={changeMenu}
@@ -69,8 +126,74 @@ const App = () =>{
       </Sider>
 	  
 	  <Layout className="site-layout">
-		<Content>
-		  <p>Selected menu: {selectedOption}, {items[selectedOption].label}</p>
+	    <Header>
+		  <h1 style={{color: 'white', fontSize: 24}} > The Form, Generator DOCX otomatis</h1>
+		</Header>
+		
+		<Content style={{margin: '30px', marginRight: '20px'}} >
+		  <div>
+		  {/**<MenuContent/>**/}
+			{selectedOption === '0' ? <h1>Proposal Trovi</h1>
+			:selectedOption === '1' ? <h1>Laporan Magang</h1>
+			:<h1>Rekomendasi Magang</h1>
+			}
+			<Form>
+			
+			  <h2> Judul</h2>
+			  <Form.Item >
+			    <TextArea 
+				rows={4} 
+				placeholder="Judul"
+				ref={refJudul}
+				value={judul}
+				onChange={(text)=>{
+					setJudul(text.target.value);
+					data["judul"] = text.target.value;
+					//console.log(data["judul"]);
+				}}
+				/>
+			  </Form.Item>
+			  
+			  <h2> Detail Judul</h2>
+			  <Form.Item >
+			    <TextArea 
+				rows={4} 
+				placeholder="Detail Judul"
+				ref={refDetailJudul}
+				value={detailJudul}
+				onChange={(text)=>{
+					setDetailJudul(text.target.value);
+					data["detailJudul"] = text.target.value;
+					//console.log(data["judul"]);
+				}}
+				/>
+			  </Form.Item>
+			  
+			  <h2> Pendahuluan</h2>
+			  <Form.Item >
+			    <TextArea 
+				rows={4} 
+				placeholder="Pendahuluan"
+				ref={refPendahuluan}
+				value={pendahuluan}
+				onChange={(text)=>{
+					setPendahuluan(text.target.value);
+					data["pendahuluan"] = text.target.value;
+					//console.log(data["judul"]);
+				}}
+				/>
+			  </Form.Item>
+			  
+			  <Button
+			  type="primary"
+			  size="large"
+			  onClick={buttonSubmit}
+			  >
+		        Submit
+			  </Button>
+			  
+			</Form>
+		  </div>
 		</Content>
 	    <Footer
           style={{
