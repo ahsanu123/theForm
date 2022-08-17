@@ -14,4 +14,19 @@ the form adalah projek bla bla bla.....
 ## LOG
 | DATE                 | Aaron                                 |   Ahsanu                             | Igo      |
 | :----:               | :---                                  | :---                                 | :---     |
-| Rabut 3 Agustus 2022 | riset cara bikin buletin & numbering  | pendahuluan dan isi dimasukan ke pdf | Kop surat|
+| Rabu 3 Agustus 2022 | riset cara bikin buletin & numbering  | pendahuluan dan isi dimasukan ke pdf | Kop surat|
+
+
+## TODO --> DL: 24 Agustus 2022
+1. Submit buat ngeprint (AH)
+2. Database (AH)
+3. Mbuat UI designer (Aaron)
+4. Benerin Front End sesuai diagram (Igo)
+5. Text processing (buat kayak enter dll) --> reg ex bahasa T-rex. (Igo, Aaron)
+
+
+## JOB SCOPE
+| DATE                 | Aaron                                 |   Ahsanu                                | Igo      |
+| :----:               | :---                                  | :---                                    | :---     |
+| Rabu 17 Agustus 2022 | Mbuat UI designer                     | 1. Tombol submit buat ngeprint          |          |
+|                      |                                       | 2. Tombol save buat masukin ke database |          |
