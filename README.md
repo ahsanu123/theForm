@@ -28,5 +28,5 @@ the form adalah projek bla bla bla.....
 ## JOB SCOPE
 | DATE                 | Aaron                                 |   Ahsanu                                | Igo      |
 | :----:               | :---                                  | :---                                    | :---     |
-| Rabu 17 Agustus 2022 | Mbuat UI designer                     | 1. Tombol submit buat ngeprint          |          |
-|                      |                                       | 2. Tombol save buat masukin ke database |          |
+| Rabu 17 Agustus 2022 | Mbuat UI designer                     | 1. Tombol submit buat ngeprint          | 1. Benerin Front End sesuai diagram         |
+|                      |                                       | 2. Tombol save buat masukin ke database | 2. Text processing (buat kayak enter dll) --> reg ex bahasa T-rex.         |
