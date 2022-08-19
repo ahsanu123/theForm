@@ -110,7 +110,27 @@ const App = () =>{
   }
   
   const buttonSubmit = async() =>{
-	  var fromserver = await fetch('http://localhost:3000/api');
+		const requestOptions = {
+			method: 'GET',
+			headers: { 'Content-Type': 'application/json' }
+		};
+
+		fetch('/api', requestOptions)
+		.then((res) => {
+			return res.blob();
+		})
+		.then((blob) => {
+			const href = window.URL.createObjectURL(blob);
+			const link = document.createElement('a');
+			link.href = href;
+			link.setAttribute('download', 'output.docx');
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		})
+		.catch((err) => {
+			return Promise.reject({ Error: 'Something Went Wrong', err });
+		})
   }
   
   return (
