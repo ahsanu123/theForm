@@ -3,6 +3,7 @@ import { TemplateHandler } from 'easy-template-x';
 import express from 'express';
 import path from 'path';
 import FileSaver from 'file-saver';
+import mysql from 'mysql2';
 
 const app = express();
 
@@ -26,7 +27,26 @@ app.get('/api', async(req, res)=>{
 	res.download(pathOutput);
 });
 app.get('/data', (req, res) => {
-	res.download(pathOutput, 'output.docx');
+	// create the connection to database
+	const connection = mysql.createConnection({
+	  host: 'localhost',
+	  user: 'root',
+	  database: 'test',
+	  password: '123'
+	});
+
+	// execute will internally call prepare and query
+	connection.execute(
+	  'SELECT * FROM `table` WHERE `name` = ? AND `age` > ?',
+	  ['Rick C-137', 53],
+	  function(err, results, fields) {
+		console.log(results); // results contains rows returned by server
+		console.log(fields); // fields contains extra meta data about results, if available
+
+		// If you execute same statement again, it will be picked from a LRU cache
+		// which will save query preparation time and give better performance
+	  }
+	);
 });
 app.use(express.static('dist'));
 
