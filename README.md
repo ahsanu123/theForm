@@ -18,9 +18,9 @@ the form adalah projek bla bla bla.....
 
 
 ## TODO --> DL: 24 Agustus 2022
-- [ ] Submit buat ngeprint (AH)
+- [x] Submit buat ngeprint (AH)
 - [ ] Database (AH)
-- [ ] Mbuat UI designer (Aaron)
+- [x] Mbuat UI designer (Aaron)
 - [ ] Benerin Front End sesuai diagram (Igo)
 - [ ] Text processing (buat kayak enter dll) --> reg ex bahasa T-rex. (Igo, Aaron)
 
@@ -28,5 +28,7 @@ the form adalah projek bla bla bla.....
 ## JOB SCOPE
 | DATE                 | Aaron                                 |   Ahsanu                                | Igo      |
 | :----:               | :---                                  | :---                                    | :---     |
-| Rabu 17 Agustus 2022 | Mbuat UI designer                     | 1. Tombol submit buat ngeprint          | 1. Benerin Front End sesuai diagram         |
-|                      |                                       | 2. Tombol save buat masukin ke database | 2. Text processing (buat kayak enter dll) --> reg ex bahasa T-rex.         |
+| Minggu, 28 Agustus 2022 | Mbuat Text Processing                 | 1. List Top-ten             | 1. Benerin Front End sesuai diagram         |
+|                      |                                       | 2. Connect ke List          |                                             |
+
+Progress cek: Minggu, 4 September 2022
