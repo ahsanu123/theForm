@@ -1,5 +1,7 @@
 # theForm
-the form adalah projek bla bla bla.....
+the form adalah generator LPJ otomatis
+
+![Diagram](doc/DiagramDB.png)
 
 ## cara install
 1. install git [download git dulu](https://git-scm.com/downloads)
