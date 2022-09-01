@@ -34,4 +34,3 @@ the form adalah generator LPJ otomatis
 |                      |                                       | 2. Connect ke List          |                                             |
 
 Progress cek: Minggu, 4 September 2022
-cek sound
