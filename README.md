@@ -32,3 +32,4 @@ the form adalah projek bla bla bla.....
 |                      |                                       | 2. Connect ke List          |                                             |
 
 Progress cek: Minggu, 4 September 2022
+cek sound
