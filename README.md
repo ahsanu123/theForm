@@ -21,7 +21,7 @@ the form adalah generator LPJ otomatis
 
 ## TODO --> DL: 24 Agustus 2022
 - [x] Submit buat ngeprint (AH)
-- [ ] Database (AH)
+- [x] Database (AH)
 - [x] Mbuat UI designer (Aaron)
 - [ ] Benerin Front End sesuai diagram (Igo)
 - [ ] Text processing (buat kayak enter dll) --> reg ex bahasa T-rex. (Igo, Aaron)
@@ -30,7 +30,7 @@ the form adalah generator LPJ otomatis
 ## JOB SCOPE
 | DATE                 | Aaron                                 |   Ahsanu                                | Igo      |
 | :----:               | :---                                  | :---                                    | :---     |
-| Minggu, 28 Agustus 2022 | Mbuat Text Processing                 | 1. List Top-ten             | 1. Benerin Front End sesuai diagram         |
-|                      |                                       | 2. Connect ke List          |                                             |
+| Minggu, 25 September 2022 | 1. Mbuat Text Processing                 | 1. Mbuat filter dataset buat search            | 1. Benerin Front End sesuai diagram         |
+|                      | 2. Front End                                    |  2. Mbuat database sesuai table         |                                             |
 
 Progress cek: Minggu, 4 September 2022
